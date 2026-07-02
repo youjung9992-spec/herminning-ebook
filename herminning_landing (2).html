@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>임신준비, 이번엔 제대로 | 허미닝</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.css" />
+<style>
+  :root{
+    --cream:#FBF7F4;
+    --paper:#FFFFFF;
+    --ink:#2E2024;
+    --ink-soft:#6B5A5E;
+    --ink-mute:#A6969A;
+    --rose:#C8395A;
+    --rose-deep:#9C2A46;
+    --rose-tint:#F7E4E9;
+    --sage:#7C9070;
+    --sage-tint:#EAF0E4;
+    --tulip:#D9789A;
+    --tulip-tint:#FBE7EE;
+    --line:#EBE0DE;
+    --radius:18px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--cream);
+    color:var(--ink);
+    font-family:'Pretendard Variable', Pretendard, -apple-system, sans-serif;
+    line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{
+    font-family:'Noto Serif KR', serif;
+    color:var(--ink);
+    margin:0;
+    letter-spacing:-0.01em;
+  }
+  a{color:inherit;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:920px; margin:0 auto; padding:0 24px;}
+  .eyebrow{
+    font-size:13px; font-weight:600; letter-spacing:0.12em; color:var(--rose);
+    text-transform:uppercase; margin-bottom:14px; display:inline-block;
+  }
+
+  /* urgency bar */
+  .urgency{
+    position:sticky; top:0; z-index:50;
+    background:var(--ink); color:#fff;
+    text-align:center; padding:11px 16px; font-size:13.5px; font-weight:500;
+  }
+  .urgency b{color:#F6B7C6;}
+
+  /* hero */
+  .hero{
+    padding:76px 0 60px;
+    text-align:center;
+    position:relative;
+  }
+  .hero h1{font-size:40px; font-weight:700; line-height:1.32;}
+  .hero .sub{
+    font-family:'Noto Serif KR', serif;
+    font-size:20px; color:var(--ink-soft); margin-top:16px; font-weight:500;
+  }
+  .hero .lede{
+    max-width:520px; margin:26px auto 0; font-size:15.5px; color:var(--ink-soft);
+  }
+  .price-block{
+    margin:36px auto 0; display:inline-flex; flex-direction:column; align-items:center; gap:14px;
+  }
+  .price-row{display:flex; align-items:baseline; gap:12px;}
+  .price-old{font-size:17px; color:var(--ink-mute); text-decoration:line-through;}
+  .price-new{font-size:34px; font-weight:700; font-family:'Noto Serif KR',serif; color:var(--rose-deep);}
+  .price-badge{
+    font-size:12.5px; font-weight:600; background:var(--rose-tint); color:var(--rose-deep);
+    padding:4px 12px; border-radius:100px;
+  }
+  .cta-btn{
+    display:inline-block; background:var(--rose); color:#fff; font-weight:600; font-size:16px;
+    padding:16px 40px; border-radius:100px; text-decoration:none; border:none; cursor:pointer;
+    box-shadow:0 8px 24px -8px rgba(200,57,90,0.5);
+    transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .cta-btn:hover{transform:translateY(-1px); box-shadow:0 10px 28px -6px rgba(200,57,90,0.55);}
+  .trust-line{
+    margin-top:22px; font-size:13px; color:var(--ink-mute); display:flex; gap:10px;
+    justify-content:center; flex-wrap:wrap;
+  }
+  .trust-line span:not(:last-child)::after{content:"·"; margin-left:10px; color:var(--ink-mute);}
+
+  /* author band */
+  .author{
+    background:var(--paper); border-top:1px solid var(--line); border-bottom:1px solid var(--line);
+    padding:56px 0;
+  }
+  .author .grid{display:grid; grid-template-columns:96px 1fr; gap:24px; align-items:start;}
+  .avatar{
+    width:96px; height:96px; border-radius:50%; background:var(--rose-tint);
+    display:flex; align-items:center; justify-content:center; font-size:34px;
+  }
+  .author h3{font-size:19px; margin-bottom:4px;}
+  .author .role{font-size:13px; color:var(--ink-mute); margin-bottom:14px;}
+  .author p{font-size:15px; color:var(--ink-soft); margin:0 0 10px;}
+
+  /* problem section */
+  .problem{padding:70px 0 50px; text-align:center;}
+  .problem h2{font-size:27px; max-width:520px; margin:0 auto 16px; line-height:1.5;}
+  .problem .lede{max-width:500px; margin:0 auto 44px; color:var(--ink-soft); font-size:15px;}
+  .pain-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:16px; text-align:left;}
+  .pain-card{
+    background:var(--paper); border:1px solid var(--line); border-radius:var(--radius);
+    padding:24px 20px;
+  }
+  .pain-card .mark{font-size:12px; font-weight:700; color:var(--rose); margin-bottom:10px; display:block;}
+  .pain-card p{font-size:14px; color:var(--ink-soft); margin:0;}
+
+  /* journey - signature element */
+  .journey{padding:78px 0 60px;}
+  .journey-head{text-align:center; margin-bottom:48px;}
+  .journey-head h2{font-size:27px;}
+  .journey-head p{color:var(--ink-soft); font-size:14.5px; margin-top:12px;}
+  .rail{position:relative; padding-left:26px;}
+  .rail::before{
+    content:""; position:absolute; left:9px; top:6px; bottom:6px; width:2px;
+    background:linear-gradient(to bottom, var(--sage), var(--tulip), var(--rose));
+  }
+  .stage{position:relative; margin-bottom:38px;}
+  .stage:last-child{margin-bottom:0;}
+  .stage::before{
+    content:""; position:absolute; left:-26px; top:6px; width:20px; height:20px; border-radius:50%;
+    background:var(--paper); border:3px solid var(--stage-color, var(--rose));
+  }
+  .stage-card{
+    background:var(--paper); border:1px solid var(--line); border-radius:var(--radius);
+    padding:26px 28px;
+  }
+  .stage-top{display:flex; align-items:center; gap:12px; margin-bottom:10px;}
+  .stage-icon{font-size:22px;}
+  .stage-week{
+    font-size:12px; font-weight:700; letter-spacing:0.04em; color:var(--stage-color);
+    background:var(--stage-tint); padding:3px 10px; border-radius:100px;
+  }
+  .stage-card h3{font-size:18px; margin:2px 0 8px;}
+  .stage-card p{font-size:14px; color:var(--ink-soft); margin:0 0 14px;}
+  .mission-tags{display:flex; gap:8px; flex-wrap:wrap;}
+  .mission-tags span{
+    font-size:12px; color:var(--ink-soft); background:var(--cream);
+    border:1px solid var(--line); padding:5px 11px; border-radius:100px;
+  }
+
+  /* appendix */
+  .appendix{background:var(--paper); border-top:1px solid var(--line); border-bottom:1px solid var(--line); padding:70px 0;}
+  .appendix-head{text-align:center; margin-bottom:40px;}
+  .appendix-head h2{font-size:27px;}
+  .appendix-head p{color:var(--ink-soft); font-size:14.5px; margin-top:12px;}
+  .appendix-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:12px;}
+  .appx-card{
+    border:1px solid var(--line); border-radius:14px; padding:16px 16px;
+    background:var(--cream);
+  }
+  .appx-card .tag{font-size:11px; font-weight:700; color:var(--rose); margin-bottom:6px; display:block;}
+  .appx-card .name{font-size:13.5px; font-weight:500; color:var(--ink);}
+
+  /* testimonials */
+  .reviews{padding:74px 0;}
+  .reviews-head{text-align:center; margin-bottom:40px;}
+  .reviews-head h2{font-size:27px;}
+  .reviews-head p{color:var(--ink-soft); font-size:14.5px; margin-top:10px;}
+  .review-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:16px;}
+  .review-card{
+    background:var(--paper); border:1px solid var(--line); border-radius:var(--radius);
+    padding:22px 24px;
+  }
+  .review-card p{font-size:14.5px; color:var(--ink-soft); margin:0 0 12px;}
+  .review-card .who{font-size:12.5px; color:var(--ink-mute); font-weight:600;}
+  .review-card.featured{
+    grid-column:1 / -1; background:var(--rose-tint); border:none;
+  }
+  .review-card.featured p{color:var(--rose-deep); font-size:15.5px;}
+
+  /* pricing / cta band */
+  .buy{
+    padding:78px 0; text-align:center;
+    background:linear-gradient(180deg, var(--cream), var(--tulip-tint));
+  }
+  .buy h2{font-size:27px; margin-bottom:12px;}
+  .buy .deadline{
+    display:inline-block; font-size:13px; font-weight:600; color:var(--rose-deep);
+    background:#fff; border:1px solid var(--rose-tint); padding:6px 16px; border-radius:100px;
+    margin-bottom:26px;
+  }
+  .buy-box{
+    max-width:420px; margin:0 auto; background:var(--paper); border:1px solid var(--line);
+    border-radius:20px; padding:32px 28px;
+  }
+  .buy-box .price-row{justify-content:center;}
+  .includes{text-align:left; margin:22px 0; padding:0; list-style:none;}
+  .includes li{
+    font-size:14px; color:var(--ink-soft); padding:8px 0 8px 26px; position:relative;
+    border-top:1px solid var(--line);
+  }
+  .includes li:first-child{border-top:none;}
+  .includes li::before{content:"✓"; position:absolute; left:0; color:var(--rose); font-weight:700;}
+  .placeholder-note{
+    margin-top:18px; font-size:12.5px; color:var(--ink-mute); background:var(--cream);
+    border:1px dashed var(--ink-mute); border-radius:10px; padding:10px 14px; text-align:left;
+  }
+
+  /* refund */
+  .refund{padding:50px 0; text-align:center;}
+  .refund p{max-width:460px; margin:0 auto; font-size:13.5px; color:var(--ink-mute);}
+
+  footer{padding:36px 0 60px; text-align:center; font-size:12.5px; color:var(--ink-mute);}
+
+  @media (max-width:720px){
+    .hero h1{font-size:30px;}
+    .hero .sub{font-size:17px;}
+    .author .grid{grid-template-columns:1fr; text-align:center;}
+    .author .avatar{margin:0 auto;}
+    .pain-grid{grid-template-columns:1fr;}
+    .appendix-grid{grid-template-columns:repeat(2,1fr);}
+    .review-grid{grid-template-columns:1fr;}
+    .price-new{font-size:28px;}
+  }
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto;}
+    .cta-btn{transition:none;}
+  }
+</style>
+</head>
+<body>
+
+  <div class="urgency">🌿 사전예약 <b>3일 한정</b> · 얼리버드 24,900원 (정가 39,000원)</div>
+
+  <section class="hero">
+    <div class="wrap">
+      <span class="eyebrow">이번엔 제대로 시리즈 Vol.1</span>
+      <h1>임신준비, 이번엔 제대로</h1>
+      <p class="sub">부부가 함께 걷는 12주 완전 가이드</p>
+      <p class="lede">검색만 하다 지치고, 병원 용어 앞에서 겁먹었던 그 시간을 이제 그만.
+      12년 난임전담간호사가 3,000번의 상담 끝에 정리한, 불안하지 않게 배워가는 임신준비 안내서예요.</p>
+
+      <div class="price-block">
+        <div class="price-row">
+          <span class="price-old">39,000원</span>
+          <span class="price-new">24,900원</span>
+        </div>
+        <span class="price-badge">사전예약 얼리버드 · 36% 할인</span>
+        <a href="#buy" class="cta-btn">사전예약 하기 →</a>
+      </div>
+
+      <div class="trust-line">
+        <span>12년 난임전담간호사</span>
+        <span>상담 3,000+</span>
+        <span>프셉마음 산부인과편 저자</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="author">
+    <div class="wrap grid">
+      <div class="avatar">🌿</div>
+      <div>
+        <h3>허미닝 (정유정) 드림</h3>
+        <div class="role">임신준비 코치 · 난임케어전문가</div>
+        <p>대학병원 난임센터 5년을 포함해 12년간 난임·생식의학 분야를 지켜봤어요. 지금까지 3,000명이 넘는 임신준비 여성들과 함께했고요.</p>
+        <p>그런데 이 책을 쓴 진짜 이유는 경력 때문이 아니에요. 저 역시 배란유도, 인공수정 4차, 시험관 7차를 거쳐 5년 만에 아이를 만났어요. 그 시간 동안 제가 가장 필요했던 건 더 많은 정보가 아니라, 옆에서 "이렇게 하면 돼, 걱정하지 마"라고 말해줄 사람이었어요. 그 사람이 되고 싶어서 이 책을 썼어요.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="problem">
+    <div class="wrap">
+      <h2>정보는 많은데, 마음 둘 곳이 없었죠</h2>
+      <p class="lede">체험단으로 먼저 읽은 분들이 가장 많이 꺼낸 이야기예요.</p>
+      <div class="pain-grid">
+        <div class="pain-card">
+          <span class="mark">01</span>
+          <p>병원에 처음 갔을 때 절차와 용어가 낯설고 어려워서, 시작도 전에 겁먹고 지쳤어요.</p>
+        </div>
+        <div class="pain-card">
+          <span class="mark">02</span>
+          <p>인터넷에 검색만 몰두하다 보니 오히려 스스로를 더 힘들게 만들 때가 많았어요.</p>
+        </div>
+        <div class="pain-card">
+          <span class="mark">03</span>
+          <p>검사 결과를 들을 때마다 좌절하고, 그 감정을 어디에도 풀지 못했어요.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="journey">
+    <div class="wrap">
+      <div class="journey-head">
+        <span class="eyebrow">이 책이 걷는 길</span>
+        <h2>12주, 세 번의 주기로 함께 걸어요</h2>
+        <p>실제 생리주기 흐름에 맞춰 설계했어요. 순서를 꼭 지키지 않아도, 지금 내 몸의 단계부터 펼쳐도 괜찮아요.</p>
+      </div>
+      <div class="rail">
+        <div class="stage" style="--stage-color:var(--sage); --stage-tint:var(--sage-tint);">
+          <div class="stage-card">
+            <div class="stage-top">
+              <span class="stage-icon">🌿</span>
+              <span class="stage-week">1주기 · Week 1–4</span>
+            </div>
+            <h3>우리 몸 알기 + 기초 세팅</h3>
+            <p>몸을 함께 진단하고, 둘 다 검사받고, 결과를 읽고 방향을 정하고, 식단·영양제 세팅까지 마치는 한 달이에요.</p>
+            <div class="mission-tags"><span>아내 미션</span><span>남편 미션</span><span>부부 대화 카드</span></div>
+          </div>
+        </div>
+        <div class="stage" style="--stage-color:var(--tulip); --stage-tint:var(--tulip-tint);">
+          <div class="stage-card">
+            <div class="stage-top">
+              <span class="stage-icon">🌷</span>
+              <span class="stage-week">2주기 · Week 5–8</span>
+            </div>
+            <h3>배란 관찰 집중</h3>
+            <p>배란 신호를 읽고, LH 키트와 기초체온을 실전에서 활용하고, 타이밍을 맞추고, 2주의 기다림을 함께 견디는 한 달이에요.</p>
+            <div class="mission-tags"><span>아내 미션</span><span>남편 미션</span><span>부부 대화 카드</span></div>
+          </div>
+        </div>
+        <div class="stage" style="--stage-color:var(--rose); --stage-tint:var(--rose-tint);">
+          <div class="stage-card">
+            <div class="stage-top">
+              <span class="stage-icon">🌹</span>
+              <span class="stage-week">3주기 · Week 9–12</span>
+            </div>
+            <h3>의료 개입 단계</h3>
+            <p>배란유도제와 배란초음파를 진행하고, 트리거 주사와 타이밍을 거쳐, 다음 단계를 함께 결정하고 마음을 정리하는 한 달이에요.</p>
+            <div class="mission-tags"><span>아내 미션</span><span>남편 미션</span><span>부부 대화 카드</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="appendix">
+    <div class="wrap">
+      <div class="appendix-head">
+        <span class="eyebrow">궁금할 때 펼치는 자료실</span>
+        <h2>13개 부록, 필요할 때 찾아보세요</h2>
+        <p>처음부터 다 읽지 않아도 돼요. "이게 정확히 무슨 뜻이지" 싶을 때 펼치는 용도예요.</p>
+      </div>
+      <div class="appendix-grid">
+        <div class="appx-card"><span class="tag">부록 A</span><span class="name">호르몬 & 수치 완전 가이드</span></div>
+        <div class="appx-card"><span class="tag">부록 B</span><span class="name">검사 완전 가이드</span></div>
+        <div class="appx-card"><span class="tag">부록 C</span><span class="name">PCOS 완전 정리</span></div>
+        <div class="appx-card"><span class="tag">부록 D</span><span class="name">갑상선 완전 정리</span></div>
+        <div class="appx-card"><span class="tag">부록 E</span><span class="name">남성 난임 완전 정리</span></div>
+        <div class="appx-card"><span class="tag">부록 F</span><span class="name">영양제 상세 가이드</span></div>
+        <div class="appx-card"><span class="tag">부록 G</span><span class="name">식단 레퍼런스</span></div>
+        <div class="appx-card"><span class="tag">부록 H</span><span class="name">배란 관찰 도구 완전 가이드</span></div>
+        <div class="appx-card"><span class="tag">부록 I</span><span class="name">주변 관계 관리 가이드</span></div>
+        <div class="appx-card"><span class="tag">부록 J</span><span class="name">배란유도제 완전 가이드</span></div>
+        <div class="appx-card"><span class="tag">부록 K</span><span class="name">배란초음파 & 타이밍 진료 가이드</span></div>
+        <div class="appx-card"><span class="tag">부록 L</span><span class="name">다음 단계 가이드</span></div>
+        <div class="appx-card"><span class="tag">부록 M</span><span class="name">12주 전체 비용 로드맵</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="reviews">
+    <div class="wrap">
+      <div class="reviews-head">
+        <span class="eyebrow">먼저 읽은 분들</span>
+        <h2>사전체험단이 남긴 이야기</h2>
+      </div>
+      <div class="review-grid">
+        <div class="review-card featured">
+          <p>"남편은 주위에서 '시험관 하는 아내는 그냥 잘해주라'는 말만 듣고 이해하려 노력했대요. 그런데 책을 읽고 '왜 이래서 그랬구나' 하고 마음에 더 와닿았다고 하더라고요."</p>
+          <div class="who">사전체험단 후기</div>
+        </div>
+        <div class="review-card">
+          <p>"비임신을 확인했을 때 느꼈던 감정을 위로받은 것 같아 좋았어요. 검색에만 몰두하며 힘들어할 때가 많았는데, 마음을 다잡을 수 있게 됐어요."</p>
+          <div class="who">사전체험단 후기</div>
+        </div>
+        <div class="review-card">
+          <p>"용어와 절차를 편안하게 서술해주니, 불안하고 당황하지 않고 천천히 배워간다는 점이 가장 큰 의미였어요. 매주 체크리스트도 실행할 것을 구체적으로 알려줘서 마음의 짐을 내려놓게 됐어요."</p>
+          <div class="who">사전체험단 후기</div>
+        </div>
+        <div class="review-card">
+          <p>"기존에 알고 있던 정보와 지식을 조금 더 구체적으로 정립할 수 있었어요. 배란이 뇌와 관련되어 있다는 점, 왜 스트레스 관리를 해야 하는지 체감하게 됐고요."</p>
+          <div class="who">사전체험단 후기</div>
+        </div>
+        <div class="review-card">
+          <p>"시험관 중이지만 기초부터 다시 잡고 싶어서 읽었어요. 제 식습관과 마음을 다시 들여다볼 수 있었고, 몰랐던 지식과 잘못 알고 있던 지식도 바로잡게 됐어요. 조급했던 마음이 한결 편해졌습니다."</p>
+          <div class="who">사전체험단 후기</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="buy" id="buy">
+    <div class="wrap">
+      <h2>임신준비, 이번엔 제대로 시작해요</h2>
+      <span class="deadline">사전예약 마감까지 3일 · 얼리버드 24,900원</span>
+      <div class="buy-box">
+        <div class="price-row">
+          <span class="price-old">39,000원</span>
+          <span class="price-new">24,900원</span>
+        </div>
+        <ul class="includes">
+          <li>Vol.1 임신준비, 이번엔 제대로 (PDF, 125p)</li>
+          <li>12주 · 3주기 구성, 아내·남편·부부 미션</li>
+          <li>매주 부부 대화 카드</li>
+          <li>부록 A~M, 13개 자료실</li>
+        </ul>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfPNfJFs_LiHk8YPatjZEXIOhkr-DMWbWqnARVXY1p-cmqT_w/viewform?usp=publish-editor" target="_blank" rel="noopener" class="cta-btn" style="width:100%;">구글폼 작성하러 가기 →</a>
+        <p style="font-size:12.5px; color:var(--ink-mute); margin-top:14px;">입금 계좌 안내는 폼 안에서 바로 확인하실 수 있어요.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="refund">
+    <div class="wrap">
+      <p>발송 전에는 언제든 취소·환불이 가능해요. 다만 구매 즉시 발송되는 디지털 콘텐츠 특성상, 파일 발송 후에는 환불이 어려운 점 양해 부탁드려요. 발송 전 취소를 원하시면 인스타 DM(@her.meaning)으로 편하게 말씀해주세요.</p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">© 허미닝. All rights reserved. · 무단 복제·배포·재판매를 금합니다.</div>
+  </footer>
+
+</body>
+</html>
