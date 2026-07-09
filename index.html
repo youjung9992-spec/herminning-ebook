@@ -80,6 +80,9 @@
     font-size:12.5px; font-weight:600; background:var(--rose-tint); color:var(--rose-deep);
     padding:4px 12px; border-radius:100px;
   }
+  .early-bird-note{
+    font-size:13px; color:var(--ink-mute); max-width:380px; text-align:center; margin:0;
+  }
   .cta-btn{
     display:inline-block; background:var(--rose); color:#fff; font-weight:600; font-size:16px;
     padding:16px 40px; border-radius:100px; text-decoration:none; border:none; cursor:pointer;
@@ -87,6 +90,10 @@
     transition:transform .15s ease, box-shadow .15s ease;
   }
   .cta-btn:hover{transform:translateY(-1px); box-shadow:0 10px 28px -6px rgba(200,57,90,0.55);}
+  .preview-link{
+    display:inline-block; margin-top:14px; font-size:13.5px; color:var(--ink-soft);
+    text-decoration:underline; text-underline-offset:3px;
+  }
   .trust-line{
     margin-top:22px; font-size:13px; color:var(--ink-mute); display:flex; gap:10px;
     justify-content:center; flex-wrap:wrap;
@@ -235,23 +242,24 @@
 </head>
 <body>
 
-  <div class="urgency">🌿 사전예약 <b>3일 한정</b> · 얼리버드 24,900원 (정가 39,000원)</div>
+  <div class="urgency">🌿 오픈특가 · <b id="urgency-ddate">이번 달까지</b> 29,000원 (정가 39,000원)</div>
 
   <section class="hero">
     <div class="wrap">
       <span class="eyebrow">이번엔 제대로 시리즈 Vol.1</span>
       <h1>임신준비, 이번엔 제대로</h1>
       <p class="sub">부부가 함께 걷는 12주 완전 가이드</p>
-      <p class="lede">검색만 하다 지치고, 병원 용어 앞에서 겁먹었던 그 시간을 이제 그만.
-      12년 난임전담간호사가 3,000번의 상담 끝에 정리한, 불안하지 않게 배워가는 임신준비 안내서예요.</p>
+      <p class="lede">검색만 하다 지치고, 병원 용어 앞에서 겁먹었던 그 시간을 이제 그만.</p>
+      <p class="lede" style="margin-top:10px;">12년 난임전담간호사가 3,000번의 상담 끝에 정리한, 불안하지 않게 배워가는 임신준비 안내서예요.</p>
 
       <div class="price-block">
         <div class="price-row">
           <span class="price-old">39,000원</span>
-          <span class="price-new">24,900원</span>
+          <span class="price-new">29,000원</span>
         </div>
-        <span class="price-badge">사전예약 얼리버드 · 36% 할인</span>
-        <a href="#buy" class="cta-btn">사전예약 하기 →</a>
+        <span class="price-badge">오픈특가 · 26% 할인</span>
+        <p class="early-bird-note">얼리버드 특가는 종료되었지만, 정가 대비 26% 할인된 오픈특가로 계속 만나보실 수 있어요.</p>
+        <a href="#buy" class="cta-btn">지금 구매하기 →</a>
       </div>
 
       <div class="trust-line">
@@ -268,7 +276,7 @@
       <div>
         <h3>허미닝 (정유정) 드림</h3>
         <div class="role">임신준비 코치 · 난임케어전문가</div>
-        <p>대학병원 난임센터 5년을 포함해 12년간 난임·생식의학 분야를 지켜봤어요. 지금까지 3,000명이 넘는 임신준비 여성들과 함께했고요.</p>
+        <p>대학병원 난임센터 5년을 포함해 12년간 난임·생식의학 분야를 지켜봤고, 그중 7년은 난임전문 심리코칭으로 몸뿐 아니라 마음까지 함께 다뤄왔어요. 지금까지 3,000명이 넘는 임신준비 여성들과 함께했고요.</p>
         <p>그런데 이 책을 쓴 진짜 이유는 경력 때문이 아니에요. 저 역시 배란유도, 인공수정 4차, 시험관 7차를 거쳐 5년 만에 아이를 만났어요. 그 시간 동안 제가 가장 필요했던 건 더 많은 정보가 아니라, 옆에서 "이렇게 하면 돼, 걱정하지 마"라고 말해줄 사람이었어요. 그 사람이 되고 싶어서 이 책을 썼어요.</p>
       </div>
     </div>
@@ -392,26 +400,36 @@
           <p>"시험관 중이지만 기초부터 다시 잡고 싶어서 읽었어요. 제 식습관과 마음을 다시 들여다볼 수 있었고, 몰랐던 지식과 잘못 알고 있던 지식도 바로잡게 됐어요. 조급했던 마음이 한결 편해졌습니다."</p>
           <div class="who">사전체험단 후기</div>
         </div>
+        <div class="review-card">
+          <p>"양이 많아서 더 좋아요ㅎㅎ 저는 더 많이 알 수 있고!! 어제 조금 읽어봤는데 스트레스가 중요하구나, 검사상 문제가 없다고 하는 게 수치로는 문제가 없어도 갑상선이나 저도 다낭성쪽이여서 읽는 내내 공감도 되고 아 내가 진짜 놓치고 있구나 느꼈어요."</p>
+          <div class="who">구매자 후기 · 다낭성 · 시험관 n년차</div>
+        </div>
+        <div class="review-card">
+          <p>"그리고 무엇보다도 요즘 병원 다니면서 쌤들이 처방해주시는 거 따라가는 것도 좋지만, 내가 내 몸 상태를 알고 그걸 진료 시간에 얘기를 해야 담당 난임의사쌤들도 그에 맞게 서로 체크되면서 처방해주신다는 걸 느껴요."</p>
+          <div class="who">구매자 후기 · 다낭성 · 시험관 n년차</div>
+        </div>
       </div>
+      <p class="placeholder-note">※ 새로 추가된 후기 2건의 "n년차"는 실제 연차로 바꿔주세요 (예: 3년차). 같은 분 후기라면 "다낭성 · 시험관 3년차"로 통일해도 좋아요.</p>
     </div>
   </section>
 
   <section class="buy" id="buy">
     <div class="wrap">
       <h2>임신준비, 이번엔 제대로 시작해요</h2>
-      <span class="deadline">사전예약 마감까지 3일 · 얼리버드 24,900원</span>
+      <span class="deadline" id="buy-deadline">오픈특가 · 이번 달까지 29,000원</span>
       <div class="buy-box">
         <div class="price-row">
           <span class="price-old">39,000원</span>
-          <span class="price-new">24,900원</span>
+          <span class="price-new">29,000원</span>
         </div>
         <ul class="includes">
-          <li>Vol.1 임신준비, 이번엔 제대로 (PDF, 125p)</li>
-          <li>12주 · 3주기 구성, 아내·남편·부부 미션</li>
-          <li>매주 부부 대화 카드</li>
-          <li>부록 A~M, 13개 자료실</li>
+          <li><strong>임신준비, 이번엔 제대로</strong> 본편 (PDF, 120p · 12주 3주기 구성 · 부록 A~M)</li>
+          <li>마음 다잡는 임신준비 가이드 팟캐스트 (20분)</li>
+          <li>한눈에 보는 12주 임신준비 체크리스트 (PDF)</li>
+          <li>한눈에 보는 남편 준비 요약 가이드 (PDF)</li>
         </ul>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfPNfJFs_LiHk8YPatjZEXIOhkr-DMWbWqnARVXY1p-cmqT_w/viewform?usp=publish-editor" target="_blank" rel="noopener" class="cta-btn" style="width:100%;">구글폼 작성하러 가기 →</a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfPNfJFs_LiHk8YPatjZEXIOhkr-DMWbWqnARVXY1p-cmqT_w/viewform?usp=publish-editor" target="_blank" rel="noopener" class="cta-btn" style="width:100%;">지금 구매하기 →</a>
+        <a href="https://drive.google.com/file/d/11EFGGA-3ztzuK9vEa_PI5KnTVclMKnTT/view?usp=sharing" target="_blank" rel="noopener" class="preview-link">미리보기 먼저 볼까요? →</a>
         <p style="font-size:12.5px; color:var(--ink-mute); margin-top:14px;">입금 계좌 안내는 폼 안에서 바로 확인하실 수 있어요.</p>
       </div>
     </div>
@@ -426,6 +444,30 @@
   <footer>
     <div class="wrap">© 허미닝. All rights reserved. · 무단 복제·배포·재판매를 금합니다.</div>
   </footer>
+
+  <script>
+    (function(){
+      // 오픈특가 시작일을 바꾸면 마감일이 자동으로 다시 계산됩니다.
+      var START = new Date('2026-07-09T00:00:00+09:00');
+      var DURATION_DAYS = 30;
+      var end = new Date(START.getTime() + DURATION_DAYS*24*60*60*1000);
+      var now = new Date();
+      var msLeft = end - now;
+      var daysLeft = Math.ceil(msLeft / (24*60*60*1000));
+      var endLabel = (end.getMonth()+1) + '월 ' + end.getDate() + '일';
+
+      var urgencyEl = document.getElementById('urgency-ddate');
+      var deadlineEl = document.getElementById('buy-deadline');
+
+      if(daysLeft > 0){
+        if(urgencyEl) urgencyEl.textContent = endLabel + '까지';
+        if(deadlineEl) deadlineEl.textContent = '오픈특가 · ' + endLabel + '까지 (D-' + daysLeft + ') · 29,000원';
+      } else {
+        if(urgencyEl) urgencyEl.textContent = '오픈특가 마감';
+        if(deadlineEl) deadlineEl.textContent = '오픈특가가 마감되었어요';
+      }
+    })();
+  </script>
 
 </body>
 </html>
